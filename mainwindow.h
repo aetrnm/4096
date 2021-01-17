@@ -17,5 +17,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+private slots:
+    void exit();
+    void start();
 };
 #endif // MAINWINDOW_H

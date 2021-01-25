@@ -11,11 +11,13 @@ CONFIG += c++11
 SOURCES += \
     gamewindow.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    tile.cpp
 
 HEADERS += \
     gamewindow.h \
-    mainwindow.h
+    mainwindow.h \
+    tile.h
 
 FORMS += \
     gamewindow.ui \

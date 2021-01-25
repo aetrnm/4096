@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/gamecomponents">
+        <file>images/field.png</file>
+    </qresource>
+</RCC>

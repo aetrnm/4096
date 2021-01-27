@@ -12,12 +12,14 @@ SOURCES += \
     gamewindow.cpp \
     main.cpp \
     mainwindow.cpp \
-    tile.cpp
+    tile.cpp \
+    tilemanager.cpp
 
 HEADERS += \
     gamewindow.h \
     mainwindow.h \
-    tile.h
+    tile.h \
+    tilemanager.h
 
 FORMS += \
     gamewindow.ui \

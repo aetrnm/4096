@@ -8,9 +8,10 @@ class Tile : public QGraphicsPixmapItem
 {
 public:
     Tile();
-    //~Tile();
     void setX(int x);
     void setY(int y);
+    virtual QRect fieldCoordsToImageCoords(QRect fieldsCoords) = 0;
+    // H/W: implement, remove virtual and "=0" upon implementing
 private:
     int fieldX = 0;
     int fieldY = 0;

@@ -5,7 +5,7 @@ Tile::Tile() : QGraphicsPixmapItem()
 {
     QPixmap tilePixmap(":/gamecomponents/images/tile1.png");
     this->setPixmap(tilePixmap);
-    //this->setPos(100,100);
+    this->setPos(15, 170);
     qDebug() << this->boundingRect();
 }
 

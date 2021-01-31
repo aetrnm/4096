@@ -1,12 +1,16 @@
 #include "tile.h"
 #include <QDebug>
 
-Tile::Tile() : QGraphicsPixmapItem()
+const QString Tile::tile1_path =  ":/gamecomponents/images/tile1.png";
+
+Tile::Tile() : Tile(0,0) {
+}
+
+Tile::Tile(int x, int y)
 {
-    QPixmap tilePixmap(":/gamecomponents/images/tile1.png");
+    QPixmap tilePixmap(tile1_path);
     this->setPixmap(tilePixmap);
-    this->setPos(15, 170);
-    qDebug() << this->boundingRect();
+    this->setPos(posXFirstTile + tileStep*x, posYFirstTile + tileStep*y);
 }
 
 void Tile::setX (int x){

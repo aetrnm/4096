@@ -1,6 +1,7 @@
 #include "gamewindow.h"
 #include "tile.h"
 #include "ui_gamewindow.h"
+#include "tilemanager.h"
 
 GameWindow::GameWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::GameWindow)
 {
@@ -33,10 +34,8 @@ GameWindow::GameWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::GameWi
     // put bg on the scene
     scene->addItem(bgItem);
     bgItem->setPos(0, 0);
-
-    Tile* tile = new Tile();
-    scene->addItem(tile);
     ui->graphicsView->update();
+    TileManager* tm = new TileManager(scene);
 }
 
 GameWindow::~GameWindow()

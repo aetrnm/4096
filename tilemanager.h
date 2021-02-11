@@ -3,19 +3,26 @@
 
 #include "tile.h"
 
+#include <QGraphicsScene>
 #include <QObject>
+#include <QWidget>
+#include <QVector>
 
-class TileManager : QObject
+class TileManager : QWidget
 {
     Q_OBJECT
 public:
-    TileManager();
+    TileManager(QGraphicsScene *scene);
+    void keyReleaseEvent(QKeyEvent* event) override;
 private:
-    Tile* tile;
-//    void down();
-//    void up();
-//    void left();
-//    void right();
+    bool fieldTilesExistence[4][4] = {{false}};
+    void createTile(int x, int y);
+    QGraphicsScene* scene;
+    void down(Tile* tile);
+    void up(Tile* tile);
+    void left(Tile* tile);
+    void right(Tile* tile);
+    QVector<Tile*> vectorTiles;
 };
 
 #endif // TILEMANAGER_H

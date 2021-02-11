@@ -10,12 +10,29 @@ Tile::Tile(int x, int y)
 {
     QPixmap tilePixmap(tile1_path);
     this->setPixmap(tilePixmap);
+    this->setFieldPos(x, y);
+}
+
+void Tile::setFieldX (int x){
+    setFieldPos(x, fieldY);
+}
+void Tile::setFieldY (int y){
+    setFieldPos(fieldX, y);
+}
+
+void Tile::setFieldPos(int x, int y)
+{
+    fieldX = x;
+    fieldY = y;
     this->setPos(posXFirstTile + tileStep*x, posYFirstTile + tileStep*y);
 }
 
-void Tile::setX (int x){
-    this->fieldX = x;
+int Tile::getFieldX() const
+{
+    return fieldX;
 }
-void Tile::setY (int y){
-    this->fieldY = y;
+
+int Tile::getFieldY() const
+{
+    return fieldY;
 }
